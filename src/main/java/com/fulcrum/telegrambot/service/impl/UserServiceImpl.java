@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private ModelMapper mapper;
+    private final ModelMapper mapper;
     @Value("${system.max.available.users}")
     private int maxAvailableUsers;
 

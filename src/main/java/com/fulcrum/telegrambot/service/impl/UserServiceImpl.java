@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void create(UserDto userDto) {
         try {
-            if (userRepository.countAllById() <= maxAvailableUsers) {
+            if (userRepository.count() <= maxAvailableUsers) {
                 userRepository.save(new UserDocument(UUID.randomUUID().toString(), userDto.getNickName(), userDto.getPercent()));
                 log.debug("User with nick name {}, successfully created", userDto.getNickName());
             } else {

@@ -29,7 +29,7 @@ public class CryptoCurrencyServiceImpl extends HttpApiClient implements CryptoCu
     private final CryptoCurrencyRepository cryptoCurrencyRepository;
     private final NotificationService notificationService;
 
-    @Value("crypto.prices.context-path")
+    @Value("${processing.crypto.prices.context-path}")
     private String contextPath;
 
     public CryptoCurrencyServiceImpl(RestTemplate restTemplate, CryptoCurrencyRepository cryptoCurrencyRepository, NotificationService notificationService) {

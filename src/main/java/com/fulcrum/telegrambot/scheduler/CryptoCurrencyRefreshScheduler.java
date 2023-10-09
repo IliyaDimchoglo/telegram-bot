@@ -20,7 +20,7 @@ public class CryptoCurrencyRefreshScheduler {
     @Scheduled(cron = "${processing.crypto-currency.refresh.cron}")
     public void refreshCryptoCurrency() {
         List<UserDto> usersToRefresh = userService.getUsers();
-        if (CollectionUtils.isEmpty(usersToRefresh)) {
+        if (!CollectionUtils.isEmpty(usersToRefresh)) {
             cryptoCurrencyService.refresh(usersToRefresh);
         }
     }
